@@ -29,20 +29,20 @@ class _HomeScreenState extends State<HomeScreen> {
     Provider.of<MechanicController>(context, listen: false).getMechanic();
     super.initState();
 
-    _timer = Timer.periodic(Duration(seconds: 4), (Timer timer) {
-      if (CurrentPage < 3) {
-        CurrentPage++;
-      } else {
-        CurrentPage = 0;
-      }
-      _pageController.animateToPage(CurrentPage,
-          duration: Duration(microseconds: 350), curve: Curves.easeIn);
-    });
-    @override
-    void dispose() {
-      super.dispose();
-      _timer?.cancel();
-    }
+    // _timer = Timer.periodic(Duration(seconds: 4), (Timer timer) {
+    //   if (CurrentPage < 3) {
+    //     CurrentPage++;
+    //   } else {
+    //     CurrentPage = 0;
+    //   }
+    //   _pageController.animateToPage(CurrentPage,
+    // //       duration: Duration(microseconds: 350), curve: Curves.easeIn);
+    // });
+    // @override
+    // void dispose() {
+    //   super.dispose();
+    //   _timer?.cancel();
+    // }
   }
 
   Categorylist _categorylist = Categorylist();
@@ -149,26 +149,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.all(8.0),
                           child: Row(children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 4),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 4),
                               child: Icon(
                                 Icons.search,
                                 size: 18,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 4),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 4),
                               child: Text('Search here...'),
                             ),
                           ]),
                         ),
-                        // child: TextFormField(
-                        //   textAlignVertical: TextAlignVertical.center,
-                        //   enableInteractiveSelection: true,
-                        //   decoration: InputDecoration(
-                        //       border: InputBorder.none,
-                        //       prefixIcon: Icon(Icons.search),
-                        //       hintText: 'Search'),
-                        // ),
                       ),
                     ),
                   ],
@@ -188,80 +182,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.all(5.0),
                   child: Column(
                     children: [
-                      // OFFER SCREEN
                       SizedBox(
-                        height: Mediaheight * .03,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                            foregroundDecoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10)),
-                            height: 200,
-                            width: Mediawidth,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Stack(
-                              fit: StackFit.loose,
-                              children: [
-                                PageView.builder(
-                                    physics: BouncingScrollPhysics(
-                                        parent: ScrollPhysics()),
-                                    itemCount: _homeData.offerList.length,
-                                    controller: _pageController,
-                                    onPageChanged: (value) {
-                                      pageindi = value;
-                                      setState(() {});
-                                    },
-                                    itemBuilder: (context, index) {
-                                      return Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            border: Border.all(
-                                                color:
-                                                    ColorConstants.bannerColor),
-
-                                            // gradient: LinearGradient(colors: [
-                                            //   Colors.black.withOpacity(.6),
-                                            //   Colors.black.withOpacity(.3)
-                                            // ]),
-                                          ),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            child: Image.asset(
-                                              _homeData.offerList[index].images,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ));
-                                    }),
-                                Positioned.fill(
-                                  left: 150,
-                                  child: Container(
-                                    child: ListView.builder(
-                                      scrollDirection: Axis.horizontal,
-                                      itemCount: _homeData.offerList.length,
-                                      itemBuilder: (context, index) => SizedBox(
-                                        width: 12,
-                                        child: Positioned.fill(
-                                          child: Align(
-                                            alignment: Alignment.bottomCenter,
-                                            child: CircleAvatar(
-                                              radius: pageindi == index ? 6 : 3,
-                                              backgroundColor: pageindi == index
-                                                  ? Colors.blue
-                                                  : Colors.black,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              ],
-                            )),
+                        height: 20,
                       ),
                       Divider(),
                       //CATEGORY LIST
