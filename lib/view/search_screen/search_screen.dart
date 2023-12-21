@@ -38,26 +38,17 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
           ),
         ),
-        SizedBox(
-            height: height * 0.3,
-            child: ListView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 5,
-              itemBuilder: (context, index) => ListTile(
-                title: Text('2 wheeler'),
-                trailing: Icon(Icons.north_west),
-              ),
-            )),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
             'Recent Searches',
-            style: TextStyleConstants.heading5,
+            style: TextStyleConstants.heading3,
           ),
         ),
-        Expanded(
-            child: GridView.builder(
+        SizedBox(
+          height: 10,
+        ),
+        GridView.builder(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -149,7 +140,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ]),
             ),
           ),
-        ))
+        )
       ]),
     );
   }
