@@ -1,4 +1,3 @@
-
 class FavouriteModel {
   static List mechimage = [
     'https://cdn1.vectorstock.com/i/1000x1000/23/65/man-avatar-icon-flat-vector-19152365.jpg',
@@ -24,7 +23,7 @@ class Item {
   final String ratting;
 
   Item(this.id, this.name, this.image, this.ratting);
-  @override
+
   int get hashcode => id;
 
   @override

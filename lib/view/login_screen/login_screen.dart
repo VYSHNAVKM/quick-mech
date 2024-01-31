@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     var mediawidth = MediaQuery.sizeOf(context).width;
-    var mediaheight = MediaQuery.sizeOf(context).height;
+    // var mediaheight = MediaQuery.sizeOf(context).height;
     FocusNode fieldone = FocusNode();
     FocusNode fieldtwo = FocusNode();
     return Scaffold(

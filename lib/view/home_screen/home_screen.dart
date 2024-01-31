@@ -1,13 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:quickmech/controller/fav_controller/fav_controller.dart';
 import 'package:quickmech/controller/mechanic_controller/mechanic_controller.dart';
-
 import 'package:quickmech/utils/color_constants.dart';
-import 'package:quickmech/db/home_datas.dart';
 import 'package:quickmech/view/categorywise_worker_list/categorywise_workers_list.dart';
 import 'package:quickmech/view/home_screen/item.dart';
 import 'package:quickmech/view/home_screen/widgets/worker_profile.dart';
@@ -23,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  HomeData _homeData = HomeData();
+  // HomeData _homeData = HomeData();
   @override
   void initState() {
     Provider.of<MechanicController>(context, listen: false).getMechanic();
@@ -49,14 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
   // ScrollController _scrollController = ScrollController();
 
   int index = 0;
-  PageController _pageController = PageController(initialPage: 0);
+  // PageController _pageController = PageController(initialPage: 0);
   var pageindi;
   int CurrentPage = 0;
-  Timer? _timer;
+  // Timer? _timer;
 
   @override
   Widget build(BuildContext context) {
-    var favoiuritepage = context.watch<FavouriterController>();
+    // var favoiuritepage = context.watch<FavouriterController>();
     var Mediaheight = MediaQuery.sizeOf(context).height;
     var Mediawidth = MediaQuery.sizeOf(context).width;
     return Scaffold(

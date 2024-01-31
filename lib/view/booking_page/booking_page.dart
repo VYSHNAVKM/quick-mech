@@ -18,10 +18,10 @@ class _BookingPageState extends State<BookingPage> {
 
   @override
   Widget build(BuildContext context) {
-    final hours = Fromtime.hour.toString().padLeft(2, '0');
-    final minutes = Fromtime.minute.toString().padLeft(2, '0');
-    final Fromhours = Totime.hour.toString().padLeft(2, '0');
-    final Tominutes = Totime.minute.toString().padLeft(2, '0');
+    // final hours = Fromtime.hour.toString().padLeft(2, '0');
+    // final minutes = Fromtime.minute.toString().padLeft(2, '0');
+    // final Fromhours = Totime.hour.toString().padLeft(2, '0');
+    // final Tominutes = Totime.minute.toString().padLeft(2, '0');
 
     return Scaffold(
       appBar: AppBar(
@@ -255,22 +255,34 @@ class _BookingPageState extends State<BookingPage> {
               padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 10),
               child: Card(
                 elevation: 10,
-                child: InkWell(onTap: () {
-                  showDialog(context: context, builder: (context) => AlertDialog(
-                    actions: [
-                      ElevatedButton(onPressed: (){}, child: Text("cancel"),),
-                      ElevatedButton(onPressed: (){
-                        Navigator.push
-                        (context, MaterialPageRoute(builder: (context) => orderdetails(),),);
-                      }, child: Text("Order details"),)
-                      ],
-                      title: Text("your booking is placed"),
-                      
-                      contentPadding: EdgeInsets.all(20),
-                      
-                      content:Text("mechanic will arrive in 15 minutes")  ,
-                  ),);
-                },
+                child: InkWell(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        actions: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text("cancel"),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => orderdetails(),
+                                ),
+                              );
+                            },
+                            child: Text("Order details"),
+                          )
+                        ],
+                        title: Text("your booking is placed"),
+                        contentPadding: EdgeInsets.all(20),
+                        content: Text("mechanic will arrive in 15 minutes"),
+                      ),
+                    );
+                  },
                   child: Container(
                     height: 50,
                     decoration: BoxDecoration(
